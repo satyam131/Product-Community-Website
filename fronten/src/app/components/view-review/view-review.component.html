@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-sm-6">
+    <tbody>
+
+      <div class=" container mt-4">
+        <h2>Product</h2>
+
+        Brand: {{list.brandName}}<br>
+        Product Name: {{list.productName}}<br>
+        Code: {{list.code}}<br>
+      </div>
+    </tbody>
+  </div>
+  <div class="col-sm-6">
+    <tbody>
+      <div class=" container mt-4">
+        <h2>Reviews</h2>
+        <div *ngFor="let items of list.review">
+          <div *ngIf="items.state=='approved'">
+            Review: {{items.review}}<br>
+            Rating: {{items.rating}}/5<br><br>
+
+            <div *ngIf="items.review==''">
+              <p>no data</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </tbody>
+  </div>
+
+</div>
